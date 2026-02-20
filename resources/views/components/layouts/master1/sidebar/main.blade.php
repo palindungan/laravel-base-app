@@ -28,8 +28,8 @@
             <ul class="nav nav-secondary">
                 <li class="nav-item">
                     <a href="">
-                        <i class="fas fa-desktop"></i>
-                        <p>Dashboard</p>
+                        <i class="far fa-compass"></i>
+                        <p>Explore</p>
                     </a>
                 </li>
             </ul>
