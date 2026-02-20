@@ -30,3 +30,5 @@
 
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link rel="stylesheet" href="{{ asset('kaiadmin_lite/examples/demo1/assets/css/demo.css') }}">
+
+@include('components.layouts.master1.head.style')
