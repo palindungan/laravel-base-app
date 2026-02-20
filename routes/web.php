@@ -8,4 +8,4 @@ Route::get('/', function () {
 
 Route::get('/explore', function () {
     return view('explore.index');
-});
+})->name('explore.index');

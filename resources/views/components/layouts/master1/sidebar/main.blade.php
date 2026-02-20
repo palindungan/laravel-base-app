@@ -27,7 +27,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <li class="nav-item">
-                    <a href="">
+                    <a href="{{ route('explore.index') }}">
                         <i class="far fa-compass"></i>
                         <p>Explore</p>
                     </a>
