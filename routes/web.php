@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('explore.index');
 });
 
-Route::get('/master1', function () {
-    return view('components.layouts.master1.master');
+Route::get('/explore', function () {
+    return view('explore.index');
 });
