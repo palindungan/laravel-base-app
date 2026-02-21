@@ -68,6 +68,27 @@
                                 @endfor
                             </div>
 
+                            <!-- ACTION BAR -->
+                            <div class="border-top p-2 pt-3">
+                                <div class="d-flex align-items-center gap-3 action-bar">
+
+                                    <!-- Like -->
+                                    <button class="btn btn-link p-0 like-btn" type="button">
+                                        <i class="far fa-heart fa-lg"></i>
+                                    </button>
+
+                                    <!-- Comment -->
+                                    <button class="btn btn-link p-0 comment-btn" type="button">
+                                        <i class="far fa-comment fa-lg"></i>
+                                    </button>
+
+                                </div>
+
+                                <div class="like-count mt-1">
+                                    <strong><span id="likeCount">120</span> likes</strong>
+                                </div>
+                            </div>
+
                             <!-- Input komentar -->
                             <div class="border-top p-2">
                                 <div class="input-group">
@@ -83,3 +104,26 @@
         </div>
     </div>
 </div>
+
+@push('styles')
+    <style>
+        .like-btn {
+            color: #262626;
+            transition: 0.15s;
+        }
+
+        .like-btn.liked {
+            color: #ed4956;
+            transform: scale(1.15);
+        }
+
+        .comment-btn {
+            color: #262626;
+            transition: 0.15s;
+        }
+
+        .action-bar i {
+            font-size: 22px;
+        }
+    </style>
+@endpush
