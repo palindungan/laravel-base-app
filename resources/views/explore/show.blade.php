@@ -87,6 +87,10 @@
                                 <div class="like-count mt-1">
                                     <strong><span id="likeCount">120</span> likes</strong>
                                 </div>
+
+                                <div class="post-date">
+                                    2 hari yang lalu
+                                </div>
                             </div>
 
                             <!-- Input komentar -->
