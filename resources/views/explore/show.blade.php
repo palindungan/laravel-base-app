@@ -12,9 +12,10 @@
                     <div class="row g-0">
 
                         <!-- KIRI: Gambar -->
-                        <div class="col-md-7 d-flex align-items-center justify-content-center bg-dark p-0">
-                            <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}"
-                                class="img-fluid" alt="Post Image">
+                        <div class="col-md-7 bg-dark">
+                            <div class="img-wrapper h-100 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}" class="img-fluid object-fit-cover" alt="Konten Gambar" />
+                            </div>
                         </div>
 
                         <!-- KANAN: Komentar -->
