@@ -3,7 +3,7 @@
         const button = form.querySelector('button[type="submit"]');
         if (button) {
             button.disabled = true;
-            button.innerHTML = 'Memuat...';
+            button.innerHTML = 'Loading...';
         }
     }
 </script>
