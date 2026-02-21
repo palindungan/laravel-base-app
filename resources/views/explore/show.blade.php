@@ -12,14 +12,14 @@
                     <div class="row g-0">
 
                         <!-- KIRI: Gambar -->
-                        <div class="col-md-7 bg-dark p-0">
+                        <div class="col-md-7 bg-dark p-0" style="max-height: 90vh;">
                             <div class="img-wrapper h-100 d-flex justify-content-center align-items-center">
                                 <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}" class="img-fluid object-fit-cover" alt="Konten Gambar" />
                             </div>
                         </div>
 
                         <!-- KANAN: Komentar -->
-                        <div class="col-md-5 d-flex flex-column" style="max-height: 80vh;">
+                        <div class="col-md-5 d-flex flex-column" style="max-height: 90vh;">
 
                             <!-- Header -->
                             <div class="p-3 border-bottom fw-bold">
