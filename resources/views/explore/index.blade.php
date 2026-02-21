@@ -5,7 +5,7 @@
         <div class="row">
             @for ($i = 0; $i < 7; $i++)
                 <div class="col-md-4">
-                    <button type="button" class="btn p-0 border-0 bg-transparent">
+                    <button type="button" class="btn p-0 border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#modal-default">
                         <div class="card card-profile card-post card-round insta-hover">
                             <div class="img-wrapper">
                                 <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}"
@@ -24,6 +24,8 @@
             @endfor
         </div>
     </div>
+
+    @include('explore.show')
 @endsection
 
 @push('styles')
