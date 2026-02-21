@@ -31,4 +31,6 @@
 <!-- Kaiadmin JS -->
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/kaiadmin.min.js') }}"></script>
 
+@include('components.layouts.master1.script.form')
+
 @stack('scripts')
