@@ -36,11 +36,20 @@
                             <!-- List komentar (scroll) -->
                             <div class="flex-grow-1 overflow-auto p-3">
                                 <div class="mb-3">
-                                    <strong>User1</strong> Wow keren banget!
+                                    <div class="avatar">
+                                        <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
+                                            alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                    <strong class="ms-2">User1</strong> Wow keren banget!
                                 </div>
                                 @for ($i = 0; $i < 30; $i++)
                                     <div class="mb-3">
-                                        <strong>User2</strong> Bagus!
+                                        <div class="avatar">
+                                            <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
+                                                alt="..." class="avatar-img rounded-circle">
+                                        </div>
+                                        <strong class="ms-2">User2</strong> Sangat bagus, saya suka sekali dengan foto
+                                        ini!
                                     </div>
                                 @endfor
                             </div>
