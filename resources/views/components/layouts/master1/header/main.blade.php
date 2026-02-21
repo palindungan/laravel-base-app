@@ -35,7 +35,7 @@
                                 class="avatar-img rounded-circle">
                         </div>
                         <span class="profile-username">
-                            <span class="op-7">Hi,</span> <span class="fw-bold">Name</span>
+                            <span class="op-7">Hi,</span> <span class="fw-bold">{{ Auth::user()->name }}</span>
                         </span>
                     </a>
                     <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -46,14 +46,14 @@
                                             src="{{ asset('assets/img/profile.png') }}"
                                             alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
-                                        <h4>Name</h4>
-                                        <p class="text-muted">email@example.com</p>
+                                        <h4>{{ Auth::user()->name }}</h4>
+                                        <p class="text-muted">{{ Auth::user()->email }}</p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="">Logout</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                             </li>
                         </div>
                     </ul>
