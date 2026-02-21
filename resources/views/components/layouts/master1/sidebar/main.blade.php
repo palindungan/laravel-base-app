@@ -26,7 +26,7 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
-                <li class="nav-item">
+                <li class="nav-item @yield('sidebar.explore.is_active')">
                     <a href="{{ route('explore.index') }}">
                         <i class="far fa-compass"></i>
                         <p>Explore</p>

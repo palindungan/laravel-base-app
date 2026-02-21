@@ -1,5 +1,7 @@
 @extends('components.layouts.master1.main')
 
+@section('sidebar.explore.is_active', 'active')
+
 @section('content')
     <div class="page-inner">
         <div class="row">
