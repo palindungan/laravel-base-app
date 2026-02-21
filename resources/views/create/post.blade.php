@@ -17,7 +17,7 @@
 
                         <!-- KIRI: Gambar -->
                         <div class="col-md-7 p-0">
-                            <form action="/target" class="dropzone" id="my-great-dropzone" style="height: 60vh;"></form>
+                            <form action="api/v1/target" class="dropzone" id="my-great-dropzone" style="height: 60vh;"></form>
                         </div>
 
                         <!-- KANAN: Text -->
