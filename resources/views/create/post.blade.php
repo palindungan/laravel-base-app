@@ -17,7 +17,7 @@
 
                         <!-- KIRI: Gambar -->
                         <div class="col-md-7 p-0" style="max-height: 90vh;">
-                            <form action="/target" class="dropzone" id="my-great-dropzone"></form>
+                            <form action="/target" class="dropzone" id="my-great-dropzone" style="height: 60vh;"></form>
                         </div>
 
                         <!-- KANAN: Text -->
@@ -50,6 +50,8 @@
 </div>
 
 @push('scripts')
+    <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/dropzone/dropzone.min.js') }}"></script>
+
     <script>
         Dropzone.options.myGreatDropzone = { // camelized version of the `id`
             paramName: "file", // The name that will be used to transfer the file
