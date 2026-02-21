@@ -16,13 +16,13 @@
 
                     <div class="form-sub">
                         <div class="form-floating form-floating-custom mb-3">
-                            <input id="email" name="email" type="email" class="form-control" placeholder="email"
-                                required="" value="{{ old('email', '') }}" />
+                            <input id="email" name="email" type="email" class="form-control"
+                                placeholder="email"value="{{ old('email', '') }}" />
                             <label for="email">email</label>
                         </div>
                         <div class="form-floating form-floating-custom mb-3">
-                            <input id="password" name="password" type="password" class="form-control"
-                                placeholder="password" required="" value="{{ old('password', '') }}" />
+                            <input id="password" name="password" type="password" class="form-control"placeholder="password"
+                                value="{{ old('password', '') }}" />
                             <label for="password">Password</label>
                             <div class="show-password">
                                 <i class="icon-eye"></i>
