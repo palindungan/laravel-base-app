@@ -3,6 +3,10 @@
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content position-relative">
 
+            {{-- <!-- Tombol Close di luar konten utama -->
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+                aria-label="Close"></button> --}}
+
             <div class="modal-body p-0">
                 <div class="container-fluid">
                     <div class="row g-0">
