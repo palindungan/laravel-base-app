@@ -30,3 +30,5 @@
 
 <!-- Kaiadmin JS -->
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/kaiadmin.min.js') }}"></script>
+
+@stack('scripts')

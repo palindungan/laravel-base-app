@@ -25,3 +25,7 @@
         </div>
     </div>
 @endsection
+
+@push('styles')
+    @include('explore.style')
+@endpush
