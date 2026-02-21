@@ -16,7 +16,7 @@
                     <div class="row g-0">
 
                         <!-- KIRI: Gambar -->
-                        <div class="col-md-7 p-0" style="max-height: 90vh;">
+                        <div class="col-md-7 p-0">
                             <form action="/target" class="dropzone" id="my-great-dropzone" style="height: 60vh;"></form>
                         </div>
 
