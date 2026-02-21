@@ -29,31 +29,41 @@
                                         alt="..." class="avatar-img rounded-circle">
                                 </div>
                                 <span class="profile-username">
-                                    <span class="fw-bold ms-2">Hizrian</span>
+                                    <span class="fw-bold ms-3">Hizrian</span>
                                 </span>
                             </div>
 
                             <!-- List komentar (scroll) -->
                             <div class="flex-grow-1 overflow-auto p-3">
-                                <div class="mb-3 d-flex align-items-start">
-                                    <div class="avatar">
+                                <div class="mb-3 d-flex">
+                                    <div class="avatar flex-shrink-0">
                                         <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
                                             alt="..." class="avatar-img rounded-circle">
                                     </div>
-                                    <div class="ms-3">
+
+                                    <div class="ms-3 comment-text">
                                         <strong>User1</strong>
-                                        <span>Terima kasih!</span>
+                                        <span class="ms-1">
+                                            Terima kasih!
+                                        </span>
                                     </div>
                                 </div>
                                 @for ($i = 0; $i < 30; $i++)
-                                    <div class="mb-3 d-flex align-items-start">
-                                        <div class="avatar">
+                                    <div class="mb-3 d-flex">
+                                        <div class="avatar flex-shrink-0">
                                             <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
                                                 alt="..." class="avatar-img rounded-circle">
                                         </div>
-                                        <div class="ms-3">
+
+                                        <div class="ms-3 comment-text">
                                             <strong>User2</strong>
-                                            <span>Sangat bagus, saya suka sekali dengan foto ini!</span>
+                                            <span class="ms-1">
+                                                Sangat bagus, saya suka sekali dengan foto ini yang luar biasa indah dan
+                                                penuh makna Sangat bagus, saya suka sekali dengan foto ini yang luar biasa indah dan
+                                                penuh makna
+                                                Sangat bagus, saya suka sekali dengan foto ini yang luar biasa indah dan
+                                                penuh makna
+                                            </span>
                                         </div>
                                     </div>
                                 @endfor
