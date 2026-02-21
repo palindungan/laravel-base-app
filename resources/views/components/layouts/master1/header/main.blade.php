@@ -42,8 +42,7 @@
                         <div class="dropdown-user-scroll scrollbar-outer">
                             <li>
                                 <div class="user-box">
-                                    <div class="avatar-lg"><img
-                                            src="{{ asset('assets/img/profile.png') }}"
+                                    <div class="avatar-lg"><img src="{{ asset('assets/img/profile.png') }}"
                                             alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
                                         <h4>{{ Auth::user()->name }}</h4>
@@ -53,7 +52,8 @@
                             </li>
                             <li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                                <button type="button" class="dropdown-item" data-bs-toggle="modal"
+                                    data-bs-target="#modal-logout">Logout</button>
                             </li>
                         </div>
                     </ul>

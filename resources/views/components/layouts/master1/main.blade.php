@@ -22,6 +22,8 @@
         </div>
     </div>
 
+    @include('components.layouts.master1.modal.logout')
+
     @include('components.layouts.master1.script.main')
 </body>
 

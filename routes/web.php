@@ -2,22 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/login', function () {
-//     return view('auth.login');
-// });
+Route::middleware('auth:web')->group(function () {
+    Route::get('/', function () {
+        return view('explore.index');
+    });
 
-// Route::get('/register', function () {
-//     return view('auth.register');
-// });
+    Route::get('/home', function () {
+        return view('explore.index');
+    });
 
-Route::get('/', function () {
-    return view('explore.index');
+    Route::get('/explore', function () {
+        return view('explore.index');
+    })->name('explore.index');
 });
-
-Route::get('/home', function () {
-    return view('explore.index');
-});
-
-Route::get('/explore', function () {
-    return view('explore.index');
-})->name('explore.index');
