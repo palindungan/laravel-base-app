@@ -19,7 +19,7 @@
                         </div>
 
                         <!-- KANAN: Komentar -->
-                        <div class="col-md-5 d-flex flex-column" style="max-height: 60vh;">
+                        <div class="col-md-5 d-flex flex-column" style="max-height: 80vh;">
 
                             <!-- Header -->
                             <div class="p-3 border-bottom fw-bold">
