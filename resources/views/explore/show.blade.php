@@ -14,7 +14,8 @@
                         <!-- KIRI: Gambar -->
                         <div class="col-md-7 bg-dark p-0" style="max-height: 90vh;">
                             <div class="img-wrapper h-100 d-flex justify-content-center align-items-center">
-                                <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}" class="img-fluid object-fit-cover" alt="Konten Gambar" />
+                                <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}"
+                                    class="img-fluid object-fit-cover" alt="Konten Gambar" />
                             </div>
                         </div>
 
@@ -23,7 +24,13 @@
 
                             <!-- Header -->
                             <div class="p-3 border-bottom fw-bold">
-                                Komentar
+                                <div class="avatar">
+                                    <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
+                                        alt="..." class="avatar-img rounded-circle">
+                                </div>
+                                <span class="profile-username">
+                                    <span class="fw-bold ms-2">Hizrian</span>
+                                </span>
                             </div>
 
                             <!-- List komentar (scroll) -->
