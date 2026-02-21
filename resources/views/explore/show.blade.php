@@ -3,6 +3,7 @@
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content position-relative">
 
+            <!-- Close button -->
             <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
                 aria-label="Close" style="z-index:1056;"></button>
 
