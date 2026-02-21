@@ -15,7 +15,7 @@
                 <div class="container-fluid">
                     <div class="row g-0">
 
-                        <!-- KIRI: Carousel Gambar (Bootstrap default) -->
+                        <!-- KIRI: Gambar -->
                         <div class="col-md-7 bg-dark p-0" style="max-height: 90vh;">
                             <div id="postCarousel" class="carousel slide h-100" data-bs-touch="true">
 
@@ -56,34 +56,23 @@
                             </div>
                         </div>
 
-                        <!-- KANAN: Komentar -->
-                        <div class="col-md-5 d-flex flex-column" style="max-height: 90vh;">
+                        <!-- KANAN: Text -->
+                        <div class="col-md-5 d-flex flex-column h-100">
 
                             <!-- Header -->
                             <div class="p-3 border-bottom fw-bold d-flex align-items-center">
                                 <div class="avatar flex-shrink-0">
                                     <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
-                                        alt="..." class="avatar-img rounded-circle">
+                                        class="avatar-img rounded-circle">
                                 </div>
                                 <span class="fw-bold ms-3">Hizrian</span>
                             </div>
 
-                            <!-- List komentar (scroll) -->
-                            <div class="flex-grow-1 overflow-auto p-3">
-                                <div class="mb-3 d-flex">
-                                    <div class="avatar flex-shrink-0">
-                                        <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
-                                            alt="..." class="avatar-img rounded-circle">
-                                    </div>
-
-                                    <div class="ms-3 comment-text">
-                                        <strong>User1</strong>
-                                        <span class="ms-1">
-                                            Terima kasih!
-                                        </span>
-                                    </div>
-                                </div>
+                            <!-- Textarea -->
+                            <div class="flex-grow-1 d-flex p-3">
+                                <textarea rows="15" class="form-control border-0 shadow-none h-100" placeholder="Write a caption..." style="resize:none"></textarea>
                             </div>
+
                         </div>
                     </div>
                 </div>
