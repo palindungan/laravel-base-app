@@ -35,21 +35,26 @@
 
                             <!-- List komentar (scroll) -->
                             <div class="flex-grow-1 overflow-auto p-3">
-                                <div class="mb-3">
+                                <div class="mb-3 d-flex align-items-start">
                                     <div class="avatar">
                                         <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
                                             alt="..." class="avatar-img rounded-circle">
                                     </div>
-                                    <strong class="ms-2">User1</strong> Wow keren banget!
+                                    <div class="ms-3">
+                                        <strong>User1</strong>
+                                        <span>Terima kasih!</span>
+                                    </div>
                                 </div>
                                 @for ($i = 0; $i < 30; $i++)
-                                    <div class="mb-3">
+                                    <div class="mb-3 d-flex align-items-start">
                                         <div class="avatar">
                                             <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
                                                 alt="..." class="avatar-img rounded-circle">
                                         </div>
-                                        <strong class="ms-2">User2</strong> Sangat bagus, saya suka sekali dengan foto
-                                        ini!
+                                        <div class="ms-3">
+                                            <strong>User2</strong>
+                                            <span>Sangat bagus, saya suka sekali dengan foto ini!</span>
+                                        </div>
                                     </div>
                                 @endfor
                             </div>
