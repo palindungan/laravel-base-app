@@ -34,8 +34,8 @@
                     </div>
                 </div>
                 <div class="form-action">
-                    <a href="" class="btn btn-danger btn-link btn-login me-3">Cancel</a>
-                    <a href="" class="btn btn-primary btn-login">Sign Up</a>
+                    <a href="{{ url('login') }}" class="btn btn-danger btn-link btn-login me-3">Cancel</a>
+                    <button type="submit" class="btn btn-primary btn-login">Sign Up</button>
                 </div>
             </div>
         </div>

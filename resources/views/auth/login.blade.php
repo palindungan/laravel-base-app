@@ -36,7 +36,7 @@
 
                     <div class="login-account">
                         <span class="msg">Don't have an account yet ?</span>
-                        <a href="" class="link">Sign Up</a>
+                        <a href="{{ url('register') }}" class="link">Sign Up</a>
                     </div>
                 </div>
             </div>
