@@ -23,14 +23,12 @@
                         <div class="col-md-5 d-flex flex-column" style="max-height: 90vh;">
 
                             <!-- Header -->
-                            <div class="p-3 border-bottom fw-bold">
-                                <div class="avatar">
+                            <div class="p-3 border-bottom fw-bold d-flex align-items-center">
+                                <div class="avatar flex-shrink-0">
                                     <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
                                         alt="..." class="avatar-img rounded-circle">
                                 </div>
-                                <span class="profile-username">
-                                    <span class="fw-bold ms-3">Hizrian</span>
-                                </span>
+                                <span class="fw-bold ms-3">Hizrian</span>
                             </div>
 
                             <!-- List komentar (scroll) -->
@@ -59,7 +57,8 @@
                                             <strong>User2</strong>
                                             <span class="ms-1">
                                                 Sangat bagus, saya suka sekali dengan foto ini yang luar biasa indah dan
-                                                penuh makna Sangat bagus, saya suka sekali dengan foto ini yang luar biasa indah dan
+                                                penuh makna Sangat bagus, saya suka sekali dengan foto ini yang luar
+                                                biasa indah dan
                                                 penuh makna
                                                 Sangat bagus, saya suka sekali dengan foto ini yang luar biasa indah dan
                                                 penuh makna
