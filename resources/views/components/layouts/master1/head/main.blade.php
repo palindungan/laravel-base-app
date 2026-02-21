@@ -1,5 +1,5 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+<title>Laravel Base App</title>
 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 <link rel="icon" href="{{ asset('kaiadmin_lite/examples/demo1/assets/img/kaiadmin/favicon.ico') }}"
     type="image/x-icon" />
@@ -27,9 +27,6 @@
 <link rel="stylesheet" href="{{ asset('kaiadmin_lite/examples/demo1/assets/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('kaiadmin_lite/examples/demo1/assets/css/plugins.min.css') }}">
 <link rel="stylesheet" href="{{ asset('kaiadmin_lite/examples/demo1/assets/css/kaiadmin.min.css') }}">
-
-<!-- CSS Just for demo purpose, don't include it in your project -->
-<link rel="stylesheet" href="{{ asset('kaiadmin_lite/examples/demo1/assets/css/demo.css') }}">
 
 @include('components.layouts.master1.head.style')
 
