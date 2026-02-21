@@ -12,7 +12,7 @@
                     <div class="row g-0">
 
                         <!-- KIRI: Gambar -->
-                        <div class="col-md-7 bg-dark">
+                        <div class="col-md-7 bg-dark p-0">
                             <div class="img-wrapper h-100 d-flex justify-content-center align-items-center">
                                 <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}" class="img-fluid object-fit-cover" alt="Konten Gambar" />
                             </div>
