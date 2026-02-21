@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modal-default" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="instagramModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content position-relative">
 
@@ -12,8 +12,10 @@
                     <div class="row g-0">
 
                         <!-- KIRI: Gambar -->
-                        <div class="col-md-7 d-flex align-items-center justify-content-center bg-dark">
-                            <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}" class="img-fluid" alt="Post Image">
+                        <div class="col-md-7 bg-dark p-0" style="max-height: 90vh;">
+                            <div class="img-wrapper h-100 d-flex justify-content-center align-items-center">
+                                <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}" class="img-fluid object-fit-cover" alt="Konten Gambar" />
+                            </div>
                         </div>
 
                         <!-- KANAN: Komentar -->
@@ -30,56 +32,12 @@
                                     <strong>User1</strong>
                                     <div>Wow keren banget!</div>
                                 </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-                                <div class="mb-3">
-                                    <strong>User2</strong>
-                                    <div>Bagus!</div>
-                                </div>
-
+                                @for ($i = 0; $i < 30; $i++)
+                                    <div class="mb-3">
+                                        <strong>User2</strong>
+                                        <div>Bagus!</div>
+                                    </div>
+                                @endfor
                             </div>
 
                             <!-- Input komentar -->
