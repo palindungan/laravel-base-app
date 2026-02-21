@@ -48,3 +48,8 @@ php artisan route:clear
 php artisan config:clear
 php artisan view:clear
 ```
+
+## Controller
+```
+php artisan make:controller Api/V1/PostController --api
+```
