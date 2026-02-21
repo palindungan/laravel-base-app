@@ -36,13 +36,11 @@
                             <!-- List komentar (scroll) -->
                             <div class="flex-grow-1 overflow-auto p-3">
                                 <div class="mb-3">
-                                    <strong>User1</strong>
-                                    <div>Wow keren banget!</div>
+                                    <strong>User1</strong> Wow keren banget!
                                 </div>
                                 @for ($i = 0; $i < 30; $i++)
                                     <div class="mb-3">
-                                        <strong>User2</strong>
-                                        <div>Bagus!</div>
+                                        <strong>User2</strong> Bagus!
                                     </div>
                                 @endfor
                             </div>
