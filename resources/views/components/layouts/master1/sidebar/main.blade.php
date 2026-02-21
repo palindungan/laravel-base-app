@@ -32,6 +32,12 @@
                         <p>Explore</p>
                     </a>
                 </li>
+                <li class="nav-item @yield('sidebar.create.is_active')">
+                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#modal-create-post">
+                        <i class="fas fa-plus"></i>
+                        <p>Create</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

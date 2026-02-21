@@ -29,6 +29,7 @@
     </div>
 
     @include('explore.show')
+    @include('create.post')
 @endsection
 
 @push('styles')
