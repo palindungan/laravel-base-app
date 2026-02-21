@@ -25,22 +25,18 @@
 
                                 <!-- Wrapper gambar -->
                                 <div class="carousel-inner h-100">
-
                                     <div class="carousel-item active h-100">
                                         <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/blogpost.jpg') }}"
                                             class="d-block w-100 h-100 object-fit-cover" alt="Gambar 1">
                                     </div>
-
                                     <div class="carousel-item h-100">
                                         <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/bg-404.jpeg') }}"
                                             class="d-block w-100 h-100 object-fit-cover" alt="Gambar 2">
                                     </div>
-
                                     <div class="carousel-item h-100">
                                         <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
                                             class="d-block w-100 h-100 object-fit-cover" alt="Gambar 3">
                                     </div>
-
                                 </div>
 
                                 <!-- Controls -->
