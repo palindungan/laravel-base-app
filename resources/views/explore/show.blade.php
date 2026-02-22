@@ -203,7 +203,17 @@
                     /* =========================
                        COMMENTS
                     ========================= */
-                    let commentsHtml = '';
+                    let commentsHtml = `
+                        <div class="mb-3 d-flex">
+                            <div class="avatar flex-shrink-0">
+                                <img src="{{ asset('assets/img/profile.png') }}" class="avatar-img rounded-circle">
+                            </div>
+                            <div class="ms-3 comment-text">
+                                <strong>${data.user.name}</strong>
+                                <span class="ms-1">${data.caption}</span>
+                            </div>
+                        </div>
+                    `;
 
                     data.post_comments.forEach(comment => {
                         commentsHtml += `
@@ -212,7 +222,7 @@
                                     <img src="{{ asset('assets/img/profile.png') }}" class="avatar-img rounded-circle">
                                 </div>
                                 <div class="ms-3 comment-text">
-                                    <strong>User ${comment.user_id}</strong>
+                                    <strong>${comment.user.name}</strong>
                                     <span class="ms-1">${comment.text}</span>
                                 </div>
                             </div>
@@ -229,13 +239,7 @@
                     /* =========================
                        DATE
                     ========================= */
-                    const createdAt = new Date(data.created_at);
-                    const createdAtFormatted = createdAt.toLocaleDateString('en-US', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric'
-                    });
-                    $('.post-date').text(createdAtFormatted);
+                    $('.post-date').text(data.created_at_formatted);
                 },
                 error: function(xhr) {
                     console.log(xhr.status, xhr.responseText);
