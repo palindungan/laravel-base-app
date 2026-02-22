@@ -66,7 +66,7 @@
 
                             <!-- List komentar (scroll) -->
                             <div class="flex-grow-1 overflow-auto p-3" id="post_comment_box">
-                                <div class="mb-3 d-flex">
+                                {{-- <div class="mb-3 d-flex">
                                     <div class="avatar flex-shrink-0">
                                         <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
                                             alt="..." class="avatar-img rounded-circle">
@@ -98,7 +98,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                @endfor
+                                @endfor --}}
                             </div>
 
                             <!-- ACTION BAR -->
@@ -106,7 +106,7 @@
                                 <div class="d-flex align-items-center gap-3 action-bar">
 
                                     <!-- Like -->
-                                    <button class="btn btn-link p-0 like-btn" type="button">
+                                    <button class="btn btn-link p-0 like-btn" type="button" onclick="modal_explore_show_like()">
                                         <i class="far fa-heart fa-lg"></i>
                                     </button>
 
@@ -149,6 +149,8 @@
 
         function modal_explore_show(post_id) {
             modal_explore_show_post_id = post_id;
+
+            modal_explore_show_is_liked = false
 
             $.ajax({
                 url: "{{ url('/api/v1/posts') }}/" + post_id,
@@ -341,6 +343,62 @@
 
                         // Refresh comments
                         modal_explore_show_reload_comment(modal_explore_show_post_id);
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.status, xhr.responseText);
+                    }
+                });
+            });
+        }
+
+        var modal_explore_show_is_liked = false;
+
+        function modal_explore_show_like() {
+            const post_id = modal_explore_show_post_id;
+            const status = modal_explore_show_is_liked ? 'unlike' : 'like';
+
+            getCsrfCookie(function() {
+                $.ajax({
+                    url: "{{ url('/api/v1/post_likes') }}",
+                    type: "POST",
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    data: {
+                        post_id: post_id,
+                        status: status
+                    },
+                    success: function(res) {
+                        console.log('================/api/v1/post_likes (POST)================');
+                        console.log(res);
+                        console.log('=============================================');
+
+                        // Toggle like status
+                        modal_explore_show_is_liked = !modal_explore_show_is_liked;
+
+                        // Refresh like count
+                        $.ajax({
+                            url: "{{ url('/api/v1/posts') }}/" + post_id,
+                            type: "GET",
+                            xhrFields: {
+                                withCredentials: true
+                            },
+                            success: function(res) {
+                                console.log('================/api/v1/posts/' + post_id +
+                                    '================');
+                                console.log(res);
+                                console.log(
+                                    '=============================================');
+
+                                // todo: render data
+                                const data = res.data;
+
+                                $(`#post-likes-${data.id}`).text(data
+                                    .post_likes_count);
+
+                                $('#likeCount').text(data.post_likes_count);
+                            }
+                        });
                     },
                     error: function(xhr) {
                         console.log(xhr.status, xhr.responseText);
