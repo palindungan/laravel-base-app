@@ -45,32 +45,32 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'caption' => ['required', 'string'],
-            'files.*' => ['required', 'file', 'mimes:jpg,jpeg,png,mp4,pdf', 'max:5120'],
-        ]);
+        // $validated = $request->validate([
+        //     'caption' => ['required', 'string'],
+        //     'files.*' => ['required', 'file', 'mimes:jpg,jpeg,png,mp4,pdf', 'max:5120'],
+        // ]);
 
-        $post = null;
+        // $post = null;
 
-        DB::transaction(function () use ($request, $validated) {
-            $post = Post::create([
-                'caption' => $validated['caption'] ?? null,
-            ]);
+        // DB::transaction(function () use ($request, $validated) {
+        //     $post = Post::create([
+        //         'caption' => $validated['caption'] ?? null,
+        //     ]);
 
-            if ($request->hasFile('files')) {
-                foreach ($request->file('files') as $file) {
-                    // 📌 simpan ke: post_files/random_name.ext
-                    $path = $file->store('post_files', 'public');
+        //     if ($request->hasFile('files')) {
+        //         foreach ($request->file('files') as $file) {
+        //             // 📌 simpan ke: post_files/random_name.ext
+        //             $path = $file->store('post_files', 'public');
 
-                    PostFile::create([
-                        'post_id' => $post->id,
-                        'file_path' => $path,
-                    ]);
-                }
-            }
-        });
+        //             PostFile::create([
+        //                 'post_id' => $post->id,
+        //                 'file_path' => $path,
+        //             ]);
+        //         }
+        //     }
+        // });
 
-        return response()->json($post, 201);
+        // return response()->json($post, 201);
     }
 
     /**
