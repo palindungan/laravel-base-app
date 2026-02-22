@@ -111,9 +111,9 @@
                                     </button>
 
                                     <!-- Comment -->
-                                    <button class="btn btn-link p-0 comment-btn" type="button">
+                                    <label class="btn btn-link p-0 comment-btn" for="comment" role="button">
                                         <i class="far fa-comment fa-lg"></i>
-                                    </button>
+                                    </label>
 
                                 </div>
 
@@ -129,9 +129,9 @@
                             <!-- Input komentar -->
                             <div class="border-top p-2">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-0"
-                                        placeholder="Tambah komentar...">
-                                    <button class="btn btn-primary">Kirim</button>
+                                    <input type="text" class="form-control border-0" id="comment"
+                                        placeholder="Add a comment...">
+                                    <button class="btn btn-primary">Post</button>
                                 </div>
                             </div>
                         </div>
@@ -264,7 +264,7 @@
         }
 
         .comment-btn {
-            color: #262626;
+            color: #262626 !important;
             transition: 0.15s;
         }
 
