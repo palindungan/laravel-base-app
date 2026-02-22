@@ -59,7 +59,7 @@
 
                     posts.forEach(function(post) {
                         html += `
-                            <div class="col-md-4">
+                            <div class="col-md-4" id="post-${post.id}">
                                 <button type="button" class="btn p-0 border-0 bg-transparent" data-bs-toggle="modal"
                                     data-bs-target="#instagramModal">
                                     <div class="card card-profile card-post card-round insta-hover">
@@ -69,8 +69,8 @@
 
                                             <div class="hover-info">
                                                 <div class="hover-stats">
-                                                    <span>❤️ 4000</span>
-                                                    <span>💬 2000</span>
+                                                    <span>❤️ ${post.post_likes_count}</span>
+                                                    <span>💬 ${post.post_comments_count}</span>
                                                 </div>
                                             </div>
                                         </div>
