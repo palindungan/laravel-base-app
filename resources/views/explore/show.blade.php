@@ -130,7 +130,8 @@
                             <div class="border-top p-2">
                                 <div class="input-group">
                                     <input type="text" class="form-control border-0" id="post_comment_text"
-                                        placeholder="Add a comment..." onkeydown="if(event.key === 'Enter') post_comment_store()">
+                                        placeholder="Add a comment..."
+                                        onkeydown="if(event.key === 'Enter') post_comment_store()">
                                     <button class="btn btn-primary" onclick="post_comment_store()">Post</button>
                                 </div>
                             </div>
@@ -253,6 +254,60 @@
             $('#modal-explore-show').modal('show');
         }
 
+        function modal_explore_show_comment(post_id) {
+            modal_explore_show_post_id = post_id;
+
+            $.ajax({
+                url: "{{ url('/api/v1/posts') }}/" + post_id,
+                type: "GET",
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(res) {
+                    console.log('================/api/v1/posts/' + post_id + '================');
+                    console.log(res);
+                    console.log('=============================================');
+
+                    // todo: render data
+                    const data = res.data;
+
+                    /* =========================
+                       COMMENTS
+                    ========================= */
+                    let commentsHtml = `
+                        <div class="mb-3 d-flex">
+                            <div class="avatar flex-shrink-0">
+                                <img src="{{ asset('assets/img/profile.png') }}" class="avatar-img rounded-circle">
+                            </div>
+                            <div class="ms-3 comment-text">
+                                <strong>${data.user.name}</strong>
+                                <span class="ms-1">${data.caption}</span>
+                            </div>
+                        </div>
+                    `;
+
+                    data.post_comments.forEach(comment => {
+                        commentsHtml += `
+                            <div class="mb-3 d-flex">
+                                <div class="avatar flex-shrink-0">
+                                    <img src="{{ asset('assets/img/profile.png') }}" class="avatar-img rounded-circle">
+                                </div>
+                                <div class="ms-3 comment-text">
+                                    <strong>${comment.user.name}</strong>
+                                    <span class="ms-1">${comment.text}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    $('.flex-grow-1.overflow-auto').html(commentsHtml);
+                },
+                error: function(xhr) {
+                    console.log(xhr.status, xhr.responseText);
+                }
+            });
+        }
+
         function post_comment_store() {
             const commentText = $('#post_comment_text').val();
             if (!commentText) {
@@ -280,7 +335,7 @@
                         $('#post_comment_text').val('');
 
                         // Refresh comments
-                        modal_explore_show(modal_explore_show_post_id);
+                        modal_explore_show_comment(modal_explore_show_post_id);
                     },
                     error: function(xhr) {
                         console.log(xhr.status, xhr.responseText);
