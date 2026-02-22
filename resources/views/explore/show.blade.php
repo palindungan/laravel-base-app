@@ -156,7 +156,78 @@
                     console.log(res);
                     console.log('=============================================');
 
-                    // todo
+                    // todo: render data
+                    const data = res.data;
+
+                    /* =========================
+                       CAROUSEL
+                    ========================= */
+                    let indicators = '';
+                    let slides = '';
+
+                    data.post_files.forEach((file, index) => {
+                        indicators += `
+                            <button type="button"
+                                data-bs-target="#postCarousel"
+                                data-bs-slide-to="${index}"
+                                class="${index === 0 ? 'active' : ''}">
+                            </button>
+                        `;
+
+                        slides += `
+                            <div class="carousel-item ${index === 0 ? 'active' : ''} h-100">
+                                <img src="${file.file_path_storage}"
+                                    class="d-block w-100 h-100 object-fit-cover">
+                            </div>
+                        `;
+                    });
+
+                    $('#postCarousel .carousel-indicators').html(indicators);
+                    $('#postCarousel .carousel-inner').html(slides);
+
+                    /* =========================
+                       HEADER USER
+                    ========================= */
+                    $('.col-md-5 .border-bottom').html(`
+                        <div class="avatar flex-shrink-0">
+                            <img src="/default-avatar.png" class="avatar-img rounded-circle">
+                        </div>
+                        <span class="fw-bold ms-3">${data.user.name}</span>
+                    `);
+
+                    /* =========================
+                       COMMENTS
+                    ========================= */
+                    let commentsHtml = '';
+
+                    data.post_comments.forEach(comment => {
+                        commentsHtml += `
+                            <div class="mb-3 d-flex">
+                                <div class="avatar flex-shrink-0">
+                                    <img src="/default-avatar.png" class="avatar-img rounded-circle">
+                                </div>
+                                <div class="ms-3 comment-text">
+                                    <strong>User ${comment.user_id}</strong>
+                                    <span class="ms-1">${comment.text}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    $('.flex-grow-1.overflow-auto').html(commentsHtml);
+
+                    /* =========================
+                       LIKE COUNT
+                    ========================= */
+                    $('#likeCount').text(data.post_likes_count);
+
+                    /* =========================
+                       DATE
+                    ========================= */
+                    const createdAt = new Date(data.created_at);
+                    const now = new Date();
+                    const diffDays = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
+                    $('.post-date').text(diffDays + ' hari yang lalu');
                 },
                 error: function(xhr) {
                     console.log(xhr.status, xhr.responseText);
