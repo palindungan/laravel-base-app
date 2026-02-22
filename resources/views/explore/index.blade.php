@@ -22,6 +22,8 @@
                         </div>
                     </div>
                 </button>
+
+                {{-- posts --}}
             </div>
         </div>
     </div>
@@ -32,4 +34,27 @@
 
 @push('styles')
     @include('explore.style')
+@endpush
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            post_index();
+        });
+
+        function post_index() {
+            // Lakukan request data via AJAX
+            $.ajax({
+                url: "{{ url('/api/v1/posts') }}", // Ganti dengan URL endpoint yang sesuai
+                type: 'GET',
+                data: {
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    // Proses data yang diterima dan update tampilan
+                    console.log(response);
+                }
+            });
+        }
+    </script>
 @endpush
