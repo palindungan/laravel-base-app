@@ -29,10 +29,10 @@
                                 <!-- Header -->
                                 <div class="p-3 border-bottom fw-bold d-flex align-items-center">
                                     <div class="avatar flex-shrink-0">
-                                        <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
+                                        <img src="{{ asset('assets/img/profile.png') }}"
                                             class="avatar-img rounded-circle">
                                     </div>
-                                    <span class="fw-bold ms-3">Hizrian</span>
+                                    <span class="fw-bold ms-3">{{ Auth::user()->name }}</span>
                                 </div>
 
                                 <!-- Textarea -->
