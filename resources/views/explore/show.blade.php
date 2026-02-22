@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="instagramModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modal-explore-show" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content position-relative">
 
@@ -141,6 +141,32 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        function modal_explore_show(post_id) {
+            $.ajax({
+                url: "{{ url('/api/v1/posts') }}/" + post_id,
+                type: "GET",
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(res) {
+                    console.log('================/api/v1/posts/' + post_id + '================');
+                    console.log(res);
+                    console.log('=============================================');
+
+                    // todo
+                },
+                error: function(xhr) {
+                    console.log(xhr.status, xhr.responseText);
+                }
+            });
+
+            $('#modal-explore-show').modal('show');
+        }
+    </script>
+@endpush
 
 @push('styles')
     <style>

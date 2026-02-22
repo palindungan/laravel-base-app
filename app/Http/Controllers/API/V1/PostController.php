@@ -46,7 +46,21 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // get post by id
+        // with user, post_files, post_comments
+        // with post_files_count, post_comments_count, post_likes_count
+        $data = Post::with('user', 'post_files', 'post_comments')->withCount('post_files', 'post_comments', 'post_likes')->find($id);
+
+        // map post_files to add file_path_storage attribute with asset('storage/' . $post_file->file_path)
+        $data->post_files->map(function ($post_file) {
+            $post_file->file_path_storage = asset('storage/' . $post_file->file_path);
+            return $post_file;
+        });
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $data
+        ]);
     }
 
     /**

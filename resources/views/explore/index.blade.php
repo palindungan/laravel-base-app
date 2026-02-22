@@ -67,8 +67,7 @@
 
                         html += `
                             <div class="col-md-4" id="post-${post.id}">
-                                <button type="button" class="btn p-0 border-0 bg-transparent" data-bs-toggle="modal"
-                                    data-bs-target="#instagramModal">
+                                <button type="button" class="btn p-0 border-0 bg-transparent" onclick="modal_explore_show(${post.id})">
                                     <div class="card card-profile card-post card-round insta-hover">
                                         <div class="img-wrapper">
                                             <img src="${file_path_storage}"
