@@ -14,6 +14,11 @@ class Post extends Model
         'caption',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function post_files()
     {
         return $this->hasMany(PostFile::class);
