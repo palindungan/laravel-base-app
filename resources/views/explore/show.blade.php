@@ -65,7 +65,7 @@
                             </div>
 
                             <!-- List komentar (scroll) -->
-                            <div class="flex-grow-1 overflow-auto p-3">
+                            <div class="flex-grow-1 overflow-auto p-3" id="post_comment_box">
                                 <div class="mb-3 d-flex">
                                     <div class="avatar flex-shrink-0">
                                         <img src="{{ asset('kaiadmin_lite/examples/demo1/assets/img/jm_denis.jpg') }}"
@@ -338,6 +338,9 @@
 
                         // Refresh comments
                         modal_explore_show_reload_comment(modal_explore_show_post_id);
+
+                        let box = $('#post_comment_box');
+                        box.scrollTop(box[0].scrollHeight);
                     },
                     error: function(xhr) {
                         console.log(xhr.status, xhr.responseText);
