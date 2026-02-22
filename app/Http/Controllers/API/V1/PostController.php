@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\PostFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -39,7 +41,32 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'caption' => ['required', 'string'],
+            'files.*' => ['required', 'file', 'mimes:jpg,jpeg,png,mp4,pdf', 'max:5120'],
+        ]);
+
+        $post = null;
+
+        DB::transaction(function () use ($request, $validated) {
+            $post = Post::create([
+                'caption' => $validated['caption'] ?? null,
+            ]);
+
+            if ($request->hasFile('files')) {
+                foreach ($request->file('files') as $file) {
+                    // 📌 simpan ke: post_files/random_name.ext
+                    $path = $file->store('post_files', 'public');
+
+                    PostFile::create([
+                        'post_id' => $post->id,
+                        'file_path' => $path,
+                    ]);
+                }
+            }
+        });
+
+        return response()->json($post, 201);
     }
 
     /**
@@ -51,7 +78,7 @@ class PostController extends Controller
         // with user, post_files, post_comments, post_comments.user
         // with post_files_count, post_comments_count, post_likes_count
         $data = Post::with('user', 'post_files', 'post_comments.user')->withCount('post_files', 'post_comments', 'post_likes')->find($id);
-        
+
         // check if post is liked by current user and add is_liked_by_current_user attribute
         $data->is_liked_by_current_user = $data->post_likes()->where('user_id', Auth::user()->id)->exists();
 
