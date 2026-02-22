@@ -84,11 +84,11 @@
 
         dz.on("successmultiple", function(files, response) {
             console.log(response);
-            dz.removeAllFiles();
 
-            // reset caption and dropzone
-            document.querySelector("textarea[name=caption]").value = "";
             dz.removeAllFiles();
+            document.querySelector("textarea[name=caption]").value = "";
+
+            post_index();
 
             $('#modal-create-post').modal('hide');
             alert("Post created successfully!");
