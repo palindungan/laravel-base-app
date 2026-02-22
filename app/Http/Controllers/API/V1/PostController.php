@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -50,6 +51,9 @@ class PostController extends Controller
         // with user, post_files, post_comments, post_comments.user
         // with post_files_count, post_comments_count, post_likes_count
         $data = Post::with('user', 'post_files', 'post_comments.user')->withCount('post_files', 'post_comments', 'post_likes')->find($id);
+        
+        // check if post is liked by current user and add is_liked_by_current_user attribute
+        $data->is_liked_by_current_user = $data->post_likes()->where('user_id', Auth::user()->id)->exists();
 
         // format created_at to F j, Y format and add created_at_formatted attribute
         $data->created_at_formatted = $data->created_at->format('F j, Y');

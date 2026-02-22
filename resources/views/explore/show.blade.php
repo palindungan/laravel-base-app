@@ -242,6 +242,7 @@
                        LIKE COUNT
                     ========================= */
                     $('#likeCount').text(data.post_likes_count);
+                    modal_explore_show_is_liked = data.is_liked_by_current_user;
 
                     /* =========================
                        DATE
