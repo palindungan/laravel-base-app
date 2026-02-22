@@ -106,7 +106,8 @@
                                 <div class="d-flex align-items-center gap-3 action-bar">
 
                                     <!-- Like -->
-                                    <button class="btn btn-link p-0 like-btn" type="button" onclick="modal_explore_show_like()">
+                                    <button class="btn btn-link p-0 like-btn" type="button"
+                                        onclick="modal_explore_show_like()">
                                         <i class="far fa-heart fa-lg"></i>
                                     </button>
 
@@ -244,6 +245,9 @@
                     $('#likeCount').text(data.post_likes_count);
                     modal_explore_show_is_liked = data.is_liked_by_current_user;
 
+                    $(`#post-likes-${data.id}`).text(data.post_likes_count);
+                    $(`#post-comments-${data.id}`).text(data.post_comments_count);
+
                     /* =========================
                        DATE
                     ========================= */
@@ -305,6 +309,7 @@
 
                     $('.flex-grow-1.overflow-auto').html(commentsHtml);
 
+                    $(`#post-likes-${data.id}`).text(data.post_likes_count);
                     $(`#post-comments-${data.id}`).text(data.post_comments_count);
 
                     let box = $('#post_comment_box');
@@ -394,8 +399,9 @@
                                 // todo: render data
                                 const data = res.data;
 
-                                $(`#post-likes-${data.id}`).text(data
-                                    .post_likes_count);
+                                $(`#post-likes-${data.id}`).text(data.post_likes_count);
+                                $(`#post-comments-${data.id}`).text(data
+                                    .post_comments_count);
 
                                 $('#likeCount').text(data.post_likes_count);
                             }
