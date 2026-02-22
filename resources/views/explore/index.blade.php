@@ -75,8 +75,8 @@
 
                                             <div class="hover-info">
                                                 <div class="hover-stats">
-                                                    <span>❤️ ${post.post_likes_count}</span>
-                                                    <span>💬 ${post.post_comments_count}</span>
+                                                    <span>❤️ <span id="post-likes-${post.id}">${post.post_likes_count}</span></span>
+                                                    <span>💬 <span id="post-comments-${post.id}">${post.post_comments_count}</span></span>
                                                 </div>
                                             </div>
                                         </div>

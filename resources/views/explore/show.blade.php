@@ -254,7 +254,7 @@
             $('#modal-explore-show').modal('show');
         }
 
-        function modal_explore_show_comment(post_id) {
+        function modal_explore_show_reload_comment(post_id) {
             modal_explore_show_post_id = post_id;
 
             $.ajax({
@@ -301,6 +301,8 @@
                     });
 
                     $('.flex-grow-1.overflow-auto').html(commentsHtml);
+
+                    $(`#post-comments-${data.id}`).text(data.post_comments_count);
                 },
                 error: function(xhr) {
                     console.log(xhr.status, xhr.responseText);
@@ -335,7 +337,7 @@
                         $('#post_comment_text').val('');
 
                         // Refresh comments
-                        modal_explore_show_comment(modal_explore_show_post_id);
+                        modal_explore_show_reload_comment(modal_explore_show_post_id);
                     },
                     error: function(xhr) {
                         console.log(xhr.status, xhr.responseText);
