@@ -52,7 +52,9 @@
                 },
                 success: function(response) {
                     // Proses data yang diterima dan update tampilan
+                    console.log('================/api/v1/posts================');
                     console.log(response);
+                    console.log('=============================================');
                 }
             });
         }
