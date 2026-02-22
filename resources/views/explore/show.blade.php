@@ -230,9 +230,12 @@
                        DATE
                     ========================= */
                     const createdAt = new Date(data.created_at);
-                    const now = new Date();
-                    const diffDays = Math.floor((now - createdAt) / (1000 * 60 * 60 * 24));
-                    $('.post-date').text(diffDays + ' hari yang lalu');
+                    const createdAtFormatted = createdAt.toLocaleDateString('en-US', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    });
+                    $('.post-date').text(createdAtFormatted);
                 },
                 error: function(xhr) {
                     console.log(xhr.status, xhr.responseText);
