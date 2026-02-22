@@ -4,13 +4,15 @@
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/core/bootstrap.min.js') }}"></script>
 
 <!-- jQuery Scrollbar -->
-<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}">
+</script>
 
 <!-- Chart JS -->
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/chart.js/chart.min.js') }}"></script>
 
 <!-- jQuery Sparkline -->
-<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}">
+</script>
 
 <!-- Chart Circle -->
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/chart-circle/circles.min.js') }}"></script>
@@ -19,7 +21,8 @@
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/datatables/datatables.min.js') }}"></script>
 
 <!-- Bootstrap Notify -->
-<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}">
+</script>
 
 <!-- jQuery Vector Maps -->
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/jsvectormap/jsvectormap.min.js') }}"></script>
@@ -30,6 +33,11 @@
 
 <!-- Kaiadmin JS -->
 <script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/kaiadmin.min.js') }}"></script>
+
+<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/select2/select2.full.min.js') }}"></script>
+<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/moment/moment.min.js') }}"></script>
+<script src="{{ asset('kaiadmin_lite/examples/demo1/assets/js/plugin/datepicker/bootstrap-datetimepicker.min.js') }}">
+</script>
 
 @include('components.layouts.master1.script.form')
 
