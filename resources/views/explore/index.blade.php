@@ -43,18 +43,19 @@
         });
 
         function post_index() {
-            // Lakukan request data via AJAX
             $.ajax({
-                url: "{{ url('/api/v1/posts') }}", // Ganti dengan URL endpoint yang sesuai
-                type: 'GET',
-                data: {
-                    _token: '{{ csrf_token() }}'
+                url: "{{ url('/api/v1/posts') }}",
+                type: "GET",
+                xhrFields: {
+                    withCredentials: true
                 },
-                success: function(response) {
-                    // Proses data yang diterima dan update tampilan
+                success: function(res) {
                     console.log('================/api/v1/posts================');
-                    console.log(response);
+                    console.log(res);
                     console.log('=============================================');
+                },
+                error: function(xhr) {
+                    console.log(xhr.status, xhr.responseText);
                 }
             });
         }
