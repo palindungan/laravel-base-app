@@ -18,6 +18,15 @@ class PostController extends Controller
         // with post_files_count, post_comments_count, post_likes_count
         $data = Post::with('user', 'post_files')->withCount('post_files', 'post_comments', 'post_likes')->get();
 
+        // map post_files to add file_path_storage attribute with asset('storage/' . $post_file->file_path)
+        $data->map(function ($post) {
+            $post->post_files->map(function ($post_file) {
+                $post_file->file_path_storage = asset('storage/' . $post_file->file_path);
+                return $post_file;
+            });
+            return $post;
+        });
+
         return response()->json([
             'status' => 'success',
             'data' => $data
