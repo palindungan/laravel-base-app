@@ -26,16 +26,13 @@ class UserSeeder extends Seeder
                 'posts' => [
                     [
                         'caption' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    ],
-                    [
-                        'caption' => 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    ],
-                    'post_files' => [
-                        [
-                            'file_path' => 'post_files/file1.jpeg',
-                        ],
-                        [
-                            'file_path' => 'post_files/file2.jpeg',
+                        'post_files' => [
+                            [
+                                'file_path' => 'post_files/file1.jpeg',
+                            ],
+                            [
+                                'file_path' => 'post_files/file2.jpeg',
+                            ],
                         ],
                     ],
                 ],
@@ -47,16 +44,13 @@ class UserSeeder extends Seeder
                 'posts' => [
                     [
                         'caption' => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    ],
-                    [
-                        'caption' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-                    ],
-                    'post_files' => [
-                        [
-                            'file_path' => 'post_files/file3.jpeg',
-                        ],
-                        [
-                            'file_path' => 'post_files/file4.jpeg',
+                        'post_files' => [
+                            [
+                                'file_path' => 'post_files/file3.jpeg',
+                            ],
+                            [
+                                'file_path' => 'post_files/file4.jpeg',
+                            ],
                         ],
                     ],
                 ],
@@ -67,16 +61,13 @@ class UserSeeder extends Seeder
                 'posts' => [
                     [
                         'caption' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    ],
-                    [
-                        'caption' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    ],
-                    'post_files' => [
-                        [
-                            'file_path' => 'post_files/file5.jpeg',
-                        ],
-                        [
-                            'file_path' => 'post_files/file6.jpeg',
+                        'post_files' => [
+                            [
+                                'file_path' => 'post_files/file5.jpeg',
+                            ],
+                            [
+                                'file_path' => 'post_files/file6.jpeg',
+                            ],
                         ],
                     ],
                 ],
@@ -87,16 +78,13 @@ class UserSeeder extends Seeder
                 'posts' => [
                     [
                         'caption' => 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    ],
-                    [
-                        'caption' => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    ],
-                    'post_files' => [
-                        [
-                            'file_path' => 'post_files/file7.jpeg',
-                        ],
-                        [
-                            'file_path' => 'post_files/file8.jpeg',
+                        'post_files' => [
+                            [
+                                'file_path' => 'post_files/file7.jpeg',
+                            ],
+                            [
+                                'file_path' => 'post_files/file8.jpeg',
+                            ],
                         ],
                     ],
                 ],
@@ -107,16 +95,13 @@ class UserSeeder extends Seeder
                 'posts' => [
                     [
                         'caption' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-                    ],
-                    [
-                        'caption' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    ],
-                    'post_files' => [
-                        [
-                            'file_path' => 'post_files/file9.jpeg',
-                        ],
-                        [
-                            'file_path' => 'post_files/file10.jpeg',
+                        'post_files' => [
+                            [
+                                'file_path' => 'post_files/file9.jpeg',
+                            ],
+                            [
+                                'file_path' => 'post_files/file10.jpeg',
+                            ],
                         ],
                     ],
                 ],
@@ -127,16 +112,13 @@ class UserSeeder extends Seeder
                 'posts' => [
                     [
                         'caption' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    ],
-                    [
-                        'caption' => 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    ],
-                    'post_files' => [
-                        [
-                            'file_path' => 'post_files/file11.jpeg',
-                        ],
-                        [
-                            'file_path' => 'post_files/file12.jpeg',
+                        'post_files' => [
+                            [
+                                'file_path' => 'post_files/file11.jpeg',
+                            ],
+                            [
+                                'file_path' => 'post_files/file12.jpeg',
+                            ],
                         ],
                     ],
                 ],
@@ -168,9 +150,11 @@ class UserSeeder extends Seeder
                 foreach ($post['post_files'] as $post_file) {
                     $model_post_file = PostFile::updateOrCreate(
                         [
+                            'post_id' => $model_post->id,
                             'file_path' => $post_file['file_path'],
                         ],
                         [
+                            'post_id' => $model_post->id,
                             'file_path' => $post_file['file_path'],
                         ]
                     );
