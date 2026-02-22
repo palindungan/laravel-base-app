@@ -159,6 +159,11 @@
                     // todo: render data
                     const data = res.data;
 
+                    // Clear
+                    $('#postCarousel .carousel-indicators').empty();
+                    $('#postCarousel .carousel-inner').empty();
+                    $('.flex-grow-1.overflow-auto').empty();
+
                     /* =========================
                        CAROUSEL
                     ========================= */
@@ -190,7 +195,7 @@
                     ========================= */
                     $('.col-md-5 .border-bottom').html(`
                         <div class="avatar flex-shrink-0">
-                            <img src="/default-avatar.png" class="avatar-img rounded-circle">
+                            <img src="{{ asset('assets/img/profile.png') }}" class="avatar-img rounded-circle">
                         </div>
                         <span class="fw-bold ms-3">${data.user.name}</span>
                     `);
@@ -204,7 +209,7 @@
                         commentsHtml += `
                             <div class="mb-3 d-flex">
                                 <div class="avatar flex-shrink-0">
-                                    <img src="/default-avatar.png" class="avatar-img rounded-circle">
+                                    <img src="{{ asset('assets/img/profile.png') }}" class="avatar-img rounded-circle">
                                 </div>
                                 <div class="ms-3 comment-text">
                                     <strong>User ${comment.user_id}</strong>
