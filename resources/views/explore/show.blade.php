@@ -130,7 +130,7 @@
                             <div class="border-top p-2">
                                 <div class="input-group">
                                     <input type="text" class="form-control border-0" id="post_comment_text"
-                                        placeholder="Add a comment...">
+                                        placeholder="Add a comment..." onkeydown="if(event.key === 'Enter') post_comment_store()">
                                     <button class="btn btn-primary" onclick="post_comment_store()">Post</button>
                                 </div>
                             </div>
