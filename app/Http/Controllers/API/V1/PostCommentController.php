@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\PostComment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostCommentController extends Controller
 {
@@ -20,7 +22,17 @@ class PostCommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the request data post_id, user_id, text
+        $validated = $request->validate([
+            'post_id' => 'required|exists:posts,id',
+            'text' => 'required|string',
+        ]);
+
+        $validated['user_id'] = Auth::user()->id; // set the user_id to the authenticated user's id
+
+        // create a new comment for the post
+        $comment = PostComment::create($validated);
+        return response()->json($comment, 201);
     }
 
     /**

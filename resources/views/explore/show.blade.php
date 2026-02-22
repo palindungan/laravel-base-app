@@ -111,7 +111,7 @@
                                     </button>
 
                                     <!-- Comment -->
-                                    <label class="btn btn-link p-0 comment-btn" for="comment" role="button">
+                                    <label class="btn btn-link p-0 comment-btn" for="post_comment_text" role="button">
                                         <i class="far fa-comment fa-lg"></i>
                                     </label>
 
@@ -129,9 +129,9 @@
                             <!-- Input komentar -->
                             <div class="border-top p-2">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-0" id="comment"
+                                    <input type="text" class="form-control border-0" id="post_comment_text"
                                         placeholder="Add a comment...">
-                                    <button class="btn btn-primary">Post</button>
+                                    <button class="btn btn-primary" onclick="post_comment_store()">Post</button>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,11 @@
 
 @push('scripts')
     <script>
+        var modal_explore_show_post_id = null;
+
         function modal_explore_show(post_id) {
+            modal_explore_show_post_id = post_id;
+
             $.ajax({
                 url: "{{ url('/api/v1/posts') }}/" + post_id,
                 type: "GET",
@@ -160,9 +164,9 @@
                     const data = res.data;
 
                     // Clear
-                    $('#postCarousel .carousel-indicators').empty();
-                    $('#postCarousel .carousel-inner').empty();
-                    $('.flex-grow-1.overflow-auto').empty();
+                    // $('#postCarousel .carousel-indicators').empty();
+                    // $('#postCarousel .carousel-inner').empty();
+                    // $('.flex-grow-1.overflow-auto').empty();
 
                     /* =========================
                        CAROUSEL
@@ -247,6 +251,42 @@
             });
 
             $('#modal-explore-show').modal('show');
+        }
+
+        function post_comment_store() {
+            const commentText = $('#post_comment_text').val();
+            if (!commentText) {
+                alert('Comment cannot be empty');
+                return;
+            }
+
+            getCsrfCookie(function() {
+                $.ajax({
+                    url: "{{ url('/api/v1/post_comments') }}",
+                    type: "POST",
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    data: {
+                        post_id: modal_explore_show_post_id,
+                        text: commentText
+                    },
+                    success: function(res) {
+                        console.log('================/api/v1/post_comments (POST)================');
+                        console.log(res);
+                        console.log('=============================================');
+
+                        // Clear input
+                        $('#post_comment_text').val('');
+
+                        // Refresh comments
+                        modal_explore_show(modal_explore_show_post_id);
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.status, xhr.responseText);
+                    }
+                });
+            });
         }
     </script>
 @endpush

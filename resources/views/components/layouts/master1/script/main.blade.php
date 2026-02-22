@@ -42,3 +42,33 @@
 @include('components.layouts.master1.script.form')
 
 @stack('scripts')
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script>
+    $.ajaxSetup({
+        xhrFields: {
+            withCredentials: true
+        },
+        headers: {
+            'X-XSRF-TOKEN': decodeURIComponent(
+                document.cookie
+                .split('; ')
+                .find(row => row.startsWith('XSRF-TOKEN='))
+                ?.split('=')[1] || ''
+            )
+        }
+    });
+
+    function getCsrfCookie(callback) {
+        $.ajax({
+            url: "{{ url('/sanctum/csrf-cookie') }}",
+            type: "GET",
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function() {
+                callback();
+            }
+        });
+    }
+</script>
