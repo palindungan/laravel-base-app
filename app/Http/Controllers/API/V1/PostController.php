@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,7 +13,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        // get all posts with post_files_count, post_comments_count, post_likes_count
+        $data = Post::withCount('post_files', 'post_comments', 'post_likes')->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $data
+        ]);
     }
 
     /**

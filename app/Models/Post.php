@@ -13,4 +13,19 @@ class Post extends Model
         'user_id',
         'caption',
     ];
+
+    public function post_files()
+    {
+        return $this->hasMany(PostFile::class);
+    }
+
+    public function post_comments()
+    {
+        return $this->hasMany(PostComment::class);
+    }
+
+    public function post_likes()
+    {
+        return $this->hasMany(PostLike::class);
+    }
 }

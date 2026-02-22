@@ -14,4 +14,9 @@ class PostComment extends Model
         'user_id',
         'text',
     ];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }
