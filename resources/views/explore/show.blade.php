@@ -242,11 +242,20 @@
                     /* =========================
                        LIKE COUNT
                     ========================= */
-                    $('#likeCount').text(data.post_likes_count);
+
                     modal_explore_show_is_liked = data.is_liked_by_current_user;
 
                     $(`#post-likes-${data.id}`).text(data.post_likes_count);
                     $(`#post-comments-${data.id}`).text(data.post_comments_count);
+
+                    $('#likeCount').text(data.post_likes_count);
+
+                    // Update like button state
+                    if (modal_explore_show_is_liked) {
+                        $('.like-btn').addClass('liked');
+                    } else {
+                        $('.like-btn').removeClass('liked');
+                    }
 
                     /* =========================
                        DATE
@@ -311,6 +320,15 @@
 
                     $(`#post-likes-${data.id}`).text(data.post_likes_count);
                     $(`#post-comments-${data.id}`).text(data.post_comments_count);
+
+                    $('#likeCount').text(data.post_likes_count);
+
+                    // Update like button state
+                    if (modal_explore_show_is_liked) {
+                        $('.like-btn').addClass('liked');
+                    } else {
+                        $('.like-btn').removeClass('liked');
+                    }
 
                     let box = $('#post_comment_box');
                     box.scrollTop(box[0].scrollHeight);
@@ -404,6 +422,13 @@
                                     .post_comments_count);
 
                                 $('#likeCount').text(data.post_likes_count);
+
+                                // Update like button state
+                                if (modal_explore_show_is_liked) {
+                                    $('.like-btn').addClass('liked');
+                                } else {
+                                    $('.like-btn').removeClass('liked');
+                                }
                             }
                         });
                     },
