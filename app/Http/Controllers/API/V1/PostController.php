@@ -13,8 +13,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        // get all posts with post_files_count, post_comments_count, post_likes_count
-        $data = Post::withCount('post_files', 'post_comments', 'post_likes')->get();
+        // get all posts 
+        // with post_files
+        // with post_files_count, post_comments_count, post_likes_count
+        $data = Post::with('post_files')->withCount('post_files', 'post_comments', 'post_likes')->get();
 
         return response()->json([
             'status' => 'success',
