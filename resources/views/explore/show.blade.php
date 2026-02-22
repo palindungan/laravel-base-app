@@ -303,6 +303,9 @@
                     $('.flex-grow-1.overflow-auto').html(commentsHtml);
 
                     $(`#post-comments-${data.id}`).text(data.post_comments_count);
+
+                    let box = $('#post_comment_box');
+                    box.scrollTop(box[0].scrollHeight);
                 },
                 error: function(xhr) {
                     console.log(xhr.status, xhr.responseText);
@@ -338,9 +341,6 @@
 
                         // Refresh comments
                         modal_explore_show_reload_comment(modal_explore_show_post_id);
-
-                        let box = $('#post_comment_box');
-                        box.scrollTop(box[0].scrollHeight);
                     },
                     error: function(xhr) {
                         console.log(xhr.status, xhr.responseText);
