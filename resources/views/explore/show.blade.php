@@ -165,9 +165,9 @@
                     const data = res.data;
 
                     // Clear
-                    // $('#postCarousel .carousel-indicators').empty();
-                    // $('#postCarousel .carousel-inner').empty();
-                    // $('.flex-grow-1.overflow-auto').empty();
+                    $('#postCarousel .carousel-indicators').empty();
+                    $('#postCarousel .carousel-inner').empty();
+                    $('.flex-grow-1.overflow-auto').empty();
 
                     /* =========================
                        CAROUSEL
