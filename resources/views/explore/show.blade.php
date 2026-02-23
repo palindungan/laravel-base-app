@@ -267,6 +267,7 @@
                 }
             });
 
+            $('html').removeClass('nav_open');
             $('#modal-explore-show').modal('show');
         }
 
