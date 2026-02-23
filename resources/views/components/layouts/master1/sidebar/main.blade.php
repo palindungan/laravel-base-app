@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item @yield('sidebar.create.is_active')">
-                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#modal-create-post">
+                    <a href="#" role="button" onclick="modal_create_post_show()">
                         <i class="fas fa-plus"></i>
                         <p>Create</p>
                     </a>
@@ -43,3 +43,13 @@
     </div>
 </div>
 <!-- End Sidebar -->
+
+@push('scripts')
+    <script>
+        function modal_create_post_show() {
+            $('html').removeClass('nav_open');
+
+            $('#modal-create-post').modal('show');
+        }
+    </script>
+@endpush

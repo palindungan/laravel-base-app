@@ -1,7 +1,7 @@
 <!-- Modal create-post -->
 <div class="modal fade" id="modal-create-post" tabindex="-1" role="dialog" aria-labelledby="modal-create-post"
     aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <form id="postForm" action="{{ route('web_posts.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -14,7 +14,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body p-0">
+                <div class="modal-body p-0 overflow-auto" style="max-height: 80vh;">
                     <div class="container-fluid">
                         <div class="row g-0">
 
